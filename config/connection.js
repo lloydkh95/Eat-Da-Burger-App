@@ -1,7 +1,7 @@
 // Pull in required dependencies
-var mysql = require("mysql");
+var mysql = require('mysql');
 
-// Create the MySQL connection object
+// create the MySQL connection object
 var connection;
 
 if (process.env.JAWSDB_URL) {
@@ -11,21 +11,21 @@ if (process.env.JAWSDB_URL) {
     // DB is local on localhost
     connection = mysql.createConnection({
         port: 3306,
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "burgers_db"
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'burgers_db'
     })
 };
 
-// Make the connection to MySQL
+// make the connection to MySQL
 connection.connect(function(err) {
     if (err) {
-        console.error("ERROR: MySQL connection error --" + err.stack + "\n\n");
-     return;   
+        console.error('ERROR: MySQL connection error --' + err.stack + '\n\n');
+        return;
     }
-    console.log("Connected to MySQl database as id " + connection.threadId + "\n\n");
+    console.log('Connected to Mysql database as id ' + connection.threadID + '\n\n');
 });
 
-// Export connection for ORM use 
+// export connection for ORM use
 module.exports = connection;
