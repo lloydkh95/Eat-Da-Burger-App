@@ -25,7 +25,7 @@ function objToSql(ob) {
 // create the orm object to perform sql queries
 var orm = {
     // function that returns all table entries
-    selectAll: function(tbleInput, cb) {
+    selectAll: function(tableInput, cb) {
         // construct the query string that returns all rows from the target table
         var queryString = "SELECT * FROM " + tableInput + ";";
 
